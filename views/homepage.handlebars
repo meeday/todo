@@ -1,0 +1,39 @@
+ {{> navbar}}
+ <div class="container m-5 p-2 rounded mx-auto bg-light shadow">
+<div class="card card-white">
+    <div class="row rounded  p-2 add-todo-wrapper align-items-center justify-content-center">                        
+        <div class="col">
+            <input class="form-control form-control-lg border-1 add-todo-input bg-transparent rounded" type="text" placeholder="Add new ..">
+        </div>            
+    </div>
+        <div class="col-auto m-0 my-3 px-2 d-flex align-items-center">
+            <label for="cal_date">Due Date: </label>
+            <input type="hidden" id="cal_date" value="">
+            <span style="margin-left: 20px;" id="calicon"> 
+            <i class="fa-solid fa-calendar-days text-primary "></i>
+            </span>
+        </div>
+        <div class="col-auto px-0 mx-0 mr-2">
+            <button type="button" class="btn btn-primary">Add</button>
+        </div>
+                      
+</div>
+    <ul class="nav nav-pills todo-nav">
+        <li role="presentation" class="nav-item all-task active"><a href="#" class="nav-link">All</a></li>
+        <li role="presentation" class="nav-item active-task"><a href="#" class="nav-link">Active</a></li>
+        <li role="presentation" class="nav-item completed-task "><a href="#" class="nav-link">Completed</a></li>
+        <li role="presentation" class="nav-item due-date ms-auto"><a href="#" class="nav-link text-danger">Due Date</a></li>
+    </ul>
+    <div class="todo-list">
+ {{#if todos}}
+        {{#each todos as |todo|}}
+        {{> todo}}
+        {{/each}}
+{{else}}
+<p>You have no todos yet!</p>
+   {{/if}} 
+    </div>
+    </div>
+ 
+                
+ 
