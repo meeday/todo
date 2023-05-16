@@ -21,7 +21,6 @@ router.get("/", withAuth, async (req, res) => {
       todos,
       logged_in: req.session.logged_in,
     });
-    return;
   } catch (error) {
     res.status(500).json(error);
   }
